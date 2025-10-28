@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Configurações básicas do documento -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pokédex - Desenvolvimento Web II</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho da aplicação -->
+  <header class="header">
+    <h1>Pokédex</h1>
+
+    <!-- Controles principais da aplicação -->
+    <div class="controls">
+      <!-- Controles do lado esquerdo: busca e limpeza -->
+      <div class="left-controls">
+        <input id="searchInput" type="text" placeholder="Buscar por nome (ex: pikachu)" size="30">
+        <button id="searchBtn">Buscar</button>
+        <button id="clearSearchBtn">Limpar</button>
+      </div>
+
+      <!-- Controles do lado direito: favoritos -->
+      <div class="right-controls">
+        <button id="favoritesToggle">Mostrar Favoritos</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal da aplicação -->
+  <main>
+    <!-- Área para exibir mensagens do sistema -->
+    <div id="message" class="message" hidden></div>
+    
+    <!-- Grid onde os cards dos pokémons serão renderizados -->
+    <section id="list" class="grid"></section>
+    
+    <!-- Informações da paginação atual -->
+    <div id="pageInfo" class="page-info"></div>
+
+    <!-- Botões de paginação na parte inferior -->
+    <div class="pagination-controls">
+      <button id="prevBtn">◀ Anterior</button>
+      <button id="nextBtn">Próximo ▶</button>
+    </div>
+  </main>
+
+  <!-- Modal de detalhes (inicialmente oculto) -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <!-- Botão para fechar o modal -->
+      <button id="closeModal" class="close">✖</button>
+      <!-- Conteúdo dinâmico do modal -->
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Rodapé da aplicação -->
+  <footer class="footer">
+    <small>Projeto Pokedex · Desenvolvimento Web II </small>
+  </footer>
+
+  <!-- Script principal da aplicação -->
+  <script src="script.js"></script>
+</body>
+</html>

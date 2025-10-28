@@ -1,0 +1,86 @@
+/* style.css - simples e responsivo */
+
+/* Reset básico para garantir consistência entre navegadores */
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* Estilos gerais do corpo da página */
+body{font-family:Arial,Helvetica,sans-serif; background:#f4f6fb; color:#0b1220; min-height:100vh; display:flex; flex-direction:column}
+
+/* Estilos do cabeçalho */
+.header{background:#ffffff;padding:14px 18px;box-shadow:0 1px 6px rgba(0,0,0,0.06)}
+.header h1{color:#e53935;margin-bottom:8px}
+
+/* Container dos controles (busca e favoritos) */
+.controls{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+/* Controles do lado esquerdo (busca) */
+.left-controls{display:flex;gap:8px;align-items:center}
+.left-controls input{padding:8px;border-radius:8px;border:1px solid #cbd5e1;min-width:180px;outline:none}
+.left-controls input:focus{border-color:#2563eb;box-shadow:0 0 0 2px rgba(37,99,235,0.2)}
+
+/* Controles do lado direito (favoritos) */
+.right-controls{display:flex;gap:8px;align-items:center}
+
+/* Estilos base para todos os botões */
+button{background:#2563eb;color:#fff;border:none;padding:8px 10px;border-radius:8px;cursor:pointer}
+button[disabled]{opacity:.5;cursor:not-allowed}
+
+/* Área principal de conteúdo */
+main{max-width:1100px;margin:18px auto;padding:0 12px;flex:1;width:100%}
+
+/* Estilos para mensagens do sistema */
+.message{padding:10px;border-radius:8px;background:#fffbe6;border:1px solid #ffecb5;color:#7a4b00;margin-bottom:12px;text-align:center}
+
+/* Grid responsivo para os cards dos pokémons */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+
+/* Card individual de cada pokémon */
+.card{background:#fff;border-radius:10px;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:relative;text-align:center}
+.card img{width:96px;height:96px;object-fit:contain}
+.card .name{text-transform:capitalize;font-weight:700;margin-top:6px}
+.card .meta{font-size:.85rem;color:#475569}
+
+/* Botão de favorito dentro do card */
+.fav{position:absolute;right:8px;top:8px;background:transparent;border:none;font-size:18px;cursor:pointer}
+.fav.faved{color:#ef4444}
+
+/* ========== MODAL ========== */
+/* Overlay do modal (fundo escuro) */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.45);z-index:40;padding:12px}
+
+/* Card do modal (conteúdo) */
+.modal-card{background:#fff;border-radius:12px;padding:16px;width:100%;max-width:560px;position:relative;box-shadow:0 8px 28px rgba(0,0,0,0.25)}
+
+/* Botão de fechar o modal */
+.close{position:absolute;right:10px;top:10px;background:#ef4444;border-radius:8px;padding:6px 8px;border:none;color:white;cursor:pointer}
+
+/* Layout dos detalhes dentro do modal */
+.details{display:flex;gap:12px;align-items:flex-start}
+.details img{width:160px;height:160px;object-fit:contain}
+.details .info{flex:1;text-align:left}
+
+/* Estilos para os tipos de pokémon */
+.types{display:flex;gap:8px;margin:6px 0}
+.type{background:#eef2ff;padding:4px 8px;border-radius:999px;text-transform:capitalize}
+
+/* ========== FOOTER ========== */
+.footer{text-align:center;padding:12px;color:#475569;font-size:.85rem}
+
+/* ========== PAGINAÇÃO INFERIOR ========== */
+.pagination-controls{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:20px;
+  padding:10px 0;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media(max-width:520px){
+  .details{flex-direction:column;align-items:center}
+  .details img{width:120px;height:120px}
+  .left-controls input{min-width:120px}
+}
+
+/* Garantir que o modal comece invisível */
+.modal[hidden]{display:none !important;}
